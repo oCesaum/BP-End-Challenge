@@ -1,0 +1,110 @@
+html{
+  color: #fff;
+  background-color: #171616;
+  background-image: url(BG\ pattern.png);
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  background-color: #4328ad;
+  transition: 0.3s;
+  overflow: hidden;
+
+  margin: 4rem auto;
+  border-radius: 10px;
+}
+
+.box h2 {
+  font-weight: lighter;
+  font-size: 1.2rem;
+}
+
+/* .box:hover {
+  transform: translateY(-15px);
+} */
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 560px;
+  height: 50px;
+  transform: rotate(-40deg) translateY(-100px);
+  background: linear-gradient(to right, #b6ff00, #4e690b);
+}
+
+.box:hover::after {
+  animation: border-effect 1.2s ease;
+}
+
+.container {
+  padding: 1rem;
+  height: 385px;
+}
+
+@keyframes border-effect {
+  0%{
+    transform: rotate(-40deg) translateY(-100px);
+  }
+
+  100%{
+    transform: rotate(-40deg) translateY(530px);
+  }
+}
+
+.text-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4328ad;
+  width: 295px;
+  height: 415px;
+  z-index: 10;
+  color: #fff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-content a {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: rgba(87,61,196,var(--tw-bg-opacity));
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  text-decoration: none;
+
+  transition: all .3s;
+}
+
+.text-content a:hover {
+  --tw-bg-opacity: 1;
+}
+
+.bottom {
+  position: relative;
+  top: 50%;
+}
+
+.print-desafio {
+  margin: 1rem 0;
+}
+
+.aviso {
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+}
