@@ -10,6 +10,11 @@ h1 {
   margin: 2rem auto;
 }
 
+.main-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .box {
   position: relative;
   width: 300px;
@@ -18,20 +23,29 @@ h1 {
   transition: 0.3s;
   overflow: hidden;
 
-  margin: 4rem auto;
-  border-radius: 10px;
+  /* margin: 4rem auto; */
+  margin: 4rem 0;
+  border-radius: 5px;
 }
 
 .box h2 {
   font-weight: lighter;
   font-size: 1.2rem;
+  margin: 10px 0px 2px 0px;
+}
+
+.box h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 /* .box:hover {
   transform: translateY(-15px);
 } */
 
-.box::after {
+/* CORES DA ANIMAÇÃO VENCER */
+.box-venci::after {
   content: '';
   position: absolute;
   top: 0;
@@ -42,6 +56,30 @@ h1 {
   background: linear-gradient(to right, #b6ff00, #4e690b);
 }
 
+/* CORES DA ANIMAÇÃO EMPATAR */
+.box-empatei::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 560px;
+  height: 50px;
+  transform: rotate(-40deg) translateY(-100px);
+  background: linear-gradient(to right, #ffd900, #939313);
+}
+
+/* CORES DA ANIMAÇÃO PERDER */
+.box-perdi::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 560px;
+  height: 50px;
+  transform: rotate(-40deg) translateY(-100px);
+  background: linear-gradient(to right, #ff0000, #5d0d0d);
+}
+
 .box:hover::after {
   animation: border-effect 1.2s ease;
 }
@@ -49,16 +87,6 @@ h1 {
 .container {
   padding: 1rem;
   height: 385px;
-}
-
-@keyframes border-effect {
-  0%{
-    transform: rotate(-40deg) translateY(-100px);
-  }
-
-  100%{
-    transform: rotate(-40deg) translateY(530px);
-  }
 }
 
 .text-content {
@@ -94,17 +122,29 @@ h1 {
   --tw-bg-opacity: 1;
 }
 
-.bottom {
+.btn {
   position: relative;
-  top: 50%;
+  top: 58%;
 }
 
 .print-desafio {
   margin: 1rem 0;
+  cursor: pointer;
 }
 
 .aviso {
   text-align: center;
   font-size: 11px;
   text-transform: uppercase;
+}
+
+/* ANIMAÇÂO */
+@keyframes border-effect {
+  0%{
+    transform: rotate(-40deg) translateY(-100px);
+  }
+
+  100%{
+    transform: rotate(-40deg) translateY(530px);
+  }
 }
